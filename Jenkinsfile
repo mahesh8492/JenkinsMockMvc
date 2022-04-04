@@ -12,6 +12,14 @@ pipeline {
                 bat 'mvn clean package'
             }
         }
+        stage('Sonar Analytics') {
+            steps {
+                withSonarQubeEnv('ZensarCodeAnalysis')
+                {
+                    bat 'mvn sonar sonar'
+                }
+            }
+        }
         stage('JaCoCo Report') {
             steps {
                 jacoco()
