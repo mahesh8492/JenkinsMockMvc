@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Push Docker Image to Docker Hub') {
             steps {
-                bat 'docker login -u mahesh8492 -p Mahesh@F17-19@@'
+                bat 'docker login -u mahesh8492 -p password'
                 bat 'docker push mahesh8492/test'
             }
         }
